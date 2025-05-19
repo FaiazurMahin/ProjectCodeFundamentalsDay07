@@ -64,3 +64,40 @@ if(true){
     console.log(ijk);
 }
 // console.log(ijk); --- block er baire print korte chaile hobena
+
+//Lexical scope - ekta function er scope basically or position er opor depend kore
+//lets say niche, outerval holo outer function scoped but inner function er jonno abar global scoped
+//tai inner call dile, hey im outer ashe
+//abar outer call dileo same aseh
+function outer(){
+    let outervar="Hey, I'm outer";
+    function inner(){
+        console.log(outervar);
+    }
+    inner();
+    console.log(outervar);
+}
+outer();
+
+// console.log(outervar);  -- hobena karon eita bar function scoped
+
+//Closures
+
+function mnop(){
+    let test= "I'm outer";
+    function qrst(){
+        let test2 = "I'm inner"
+        console.log(test);
+        console.log(test2);
+    }
+    qrst(); //- return(line 88) use korle alada kore function call kora lagbe na last e.)
+}
+
+const test = "Okay, I'm more outside now";
+function lmao(){
+    console.log(test);
+}
+
+mnop(); //The inner function still remembers the value even after the variable has been redeclared
+//this is closure
+lmao();
