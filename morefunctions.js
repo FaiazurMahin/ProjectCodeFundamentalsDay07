@@ -101,3 +101,14 @@ function lmao(){
 mnop(); //The inner function still remembers the value even after the variable has been redeclared
 //this is closure
 lmao();
+
+function testScope() {
+let x = 10;
+  if (true) {
+    let x = 20;
+    console.log(x);
+  }
+  console.log(x);
+}
+
+testScope();
